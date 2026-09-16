@@ -8,5 +8,32 @@ public class Screen {
 
     public Screen(PhoneModel model) {
         this.model = model;
+
+        this.model.addObserver(new PhoneObserver() {
+            @Override 
+            public void update(int newDigit) {
+                System.out.println(newDigit);
+            }
+        });
+
+        this.model.addObserver(new PhoneObserver() {
+            @Override 
+            public void update(int newDigit){
+                if (Screen.this.model.getDigits().size() == 12){
+                    System.out.print("Agora discando ");
+                    for (int d : Screen.this.model.getDigits()){
+                        System.out.print(d);
+                    }
+                    System.out.println("...");
+                }
+            }
+
+        });
+
+
+
+
+
+
     }
 }
