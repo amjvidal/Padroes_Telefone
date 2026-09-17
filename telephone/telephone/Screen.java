@@ -8,10 +8,10 @@ public class Screen {
 
     public Screen(PhoneModel model) {
         this.model = model;
-
         this.model.addObserver(new PhoneObserver() {
             @Override 
             public void update(int newDigit) {
+                System.out.println("Pressionando: " + newDigit);
                 System.out.println(newDigit);
             }
         });
