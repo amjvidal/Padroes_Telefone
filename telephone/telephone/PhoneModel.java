@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -24,6 +25,6 @@ public class PhoneModel {
     }
 
     public List<Integer> getDigits() {
-        return digits;
+        return Collections.unmodifiableList(digits);
     }
 }
